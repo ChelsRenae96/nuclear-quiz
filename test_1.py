@@ -1,7 +1,7 @@
 import time
 Y(0)=5
 Y(t)=-2t
-def rk4(f, t0, y0, t1, n):
+def rk4(f, t0, y0, n):
     vt = [0] * (n + 1)
     vy = [0] * (n + 1)
     h = (t1 - t0) / float(n)
@@ -17,7 +17,7 @@ def rk4(f, t0, y0, t1, n):
     return vt, vy
 def f(t, y):
     return t**2+5
-vt, vy = rk4(f, 0, 5, 10, 100)
+vt, vy = rk4(f, 0, 5, 10,)
 for t, y in list(zip(vt, vy))[::10]:
     print ("%4.1f %10.5f %+12.4e" % (t, y, y - (t**2 +5))
     # the "%4.1...12.4e" part is something i found on many other examples for placement, but I am unsure of its purpose. Help?
