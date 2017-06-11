@@ -1,6 +1,4 @@
-Y(0)=5
-Y'(t)=-2t
-def rk4(f, t0, y0, vy, vt, h, n):
+def rk4(f, vt, vy, h, y0, n):
     vt = [0] * (n + 1)
     vy = [0] * (n + 1)
     h = (t1 - t0) / float(n)
@@ -15,9 +13,11 @@ def rk4(f, t0, y0, vy, vt, h, n):
         vt[i] = x = t0 + i * h
         vy[i] = y = y + (k1 + 2*k2 + 2*k3 + k4) / 6
         return (vt, vy)
-def f(t, y):
-    return y=t**2+5
-    vt, vy = rk4(f, 0, 5, 10)
-    for t, y in list(zip(vt, vy))[::10]:
-        print t, y, y - (t**2 +5)
+y(0)=5
+y'(t)=-2t
+    def y:
+    return t**2+5
+vt, vy = rk4(f, 0, 5)
+for t, y in list(zip(vt, vy))[::10]:
+    print t, y, y - (t**2 +5)
 
